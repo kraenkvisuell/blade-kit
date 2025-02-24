@@ -1,0 +1,58 @@
+title: Seite
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              localizable: false
+          -
+            import: main_content
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+  seo_tab:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            handle: seo
+            field:
+              fullscreen: false
+              border: false
+              type: group
+              display: SEO
+              localizable: false
+              fields:
+                -
+                  import: seo
+  favicons:
+    display: Favicons
+    sections:
+      -
+        fields:
+          -
+            handle: favicons
+            field:
+              type: section
+              display: Favicons
+              instructions: 'Favicons müssen nur dann hinterlegt werden, wenn diese Seite andere Favicons haben soll als die Standard-Grafiken, die unter Globale Inhalte -> Einstellungen hinterlegt sind!'
+              localizable: false
+          -
+            import: favicons

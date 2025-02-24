@@ -1,0 +1,9 @@
+{
+    "name": "kraenkvisuell/blade-kit",
+    "extra": {
+        "statamic": {
+            "name": "Statamic Blade Starter Kit",
+            "description": "General purpose starter kit using blade"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+title: SEO
+fields:
+  -
+    handle: browser_title
+    field:
+      type: text
+      display: 'Browser Title'
+      localizable: true
+      character_limit: 60
+  -
+    handle: meta_description
+    field:
+      character_limit: 160
+      type: textarea
+      display: 'Meta Description'
+      localizable: false

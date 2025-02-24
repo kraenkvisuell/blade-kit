@@ -1,0 +1,193 @@
+@import 'tailwindcss';
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 300;
+    src: url('/resources/fonts/Roboto-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-style: italic;
+    src: url('/resources/fonts/Roboto-LightItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    src: url('/resources/fonts/Roboto-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: italic;
+    src: url('/resources/fonts/Roboto-Italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 600;
+    src: url('/resources/fonts/Roboto-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-style: italic;
+    src: url('/resources/fonts/Roboto-SemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 700;
+    src: url('/resources/fonts/Roboto-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-style: italic;
+    src: url('/resources/fonts/Roboto-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'RobotoSerif';
+    font-weight: 300;
+    src: url('/resources/fonts/RobotoSerif-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'RobotoSerif';
+    font-weight: 300;
+    font-style: italic;
+    src: url('/resources/fonts/RobotoSerif-LightItalic.woff2') format('woff2');
+}
+
+
+@font-face {
+    font-family: 'RobotoSerif';
+    font-weight: 400;
+    src: url('/resources/fonts/RobotoSerif-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'RobotoSerif';
+    font-weight: 400;
+    font-style: italic;
+    src: url('/resources/fonts/RobotoSerif-Italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'RobotoSerif';
+    font-weight: 600;
+    src: url('/resources/fonts/RobotoSerif-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'RobotoSerif';
+    font-weight: 600;
+    font-style: italic;
+    src: url('/resources/fonts/RobotoSerif-SemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'RobotoSerif';
+    font-weight: 700;
+    src: url('/resources/fonts/RobotoSerif-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'RobotoSerif';
+    font-weight: 700;
+    font-style: italic;
+    src: url('/resources/fonts/RobotoSerif-BoldItalic.woff2') format('woff2');
+}
+
+@layer base {}
+
+@theme {
+    --font-headline: "RobotoSerif", "serif";
+    --font-default: "Roboto", "sans-serif";
+
+    --color-base-50: oklch(97.1% 0.0032 210.53);
+    --color-base-100: oklch(95.36% 0.0032 210.53);
+    --color-base-200: oklch(77.9% 0.0235 210.53);
+    --color-base-500: oklch(55.8% 0.0235 210.53);
+    --color-base-900: oklch(27.14% 0.0268 210.53);
+    --color-base-950: oklch(22.9% 0.0268 210.53);
+    --color-highlight-500: oklch(84.05% 0.1529 179.47);
+    --color-secondary-500: oklch(84.05% 0.1529 48.91);
+    --color-alert-500: oklch(65.49% 0.1799 31.2);
+}
+
+.nav {
+    .current {
+        @apply text-highlight-500;
+    }
+}
+
+.editor {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-headline font-semibold mb-[.75em] mt-[1.5em];
+
+        &:first-child {
+            @apply mt-0;
+        }
+    }
+
+    h1 {
+        @apply text-4xl;
+    }
+
+    h2 {
+        @apply text-3xl;
+    }
+
+    h3 {
+        @apply text-2xl;
+    }
+
+    h4 {
+        @apply text-xl;
+    }
+
+    h5 {
+        @apply text-lg;
+    }
+
+    p {
+        @apply my-[.75em] leading-7;
+
+        &:first-child {
+            @apply mt-0;
+        }
+
+        &:last-child {
+            @apply mb-0;
+        }
+    }
+
+    a {
+        @apply underline underline-offset-2 decoration-1;
+    }
+}
+
+.video-container {
+    @apply w-full h-full;
+
+    >* {
+        @apply hidden;
+    }
+
+    >iframe {
+        @apply block w-full h-full;
+    }
+}

@@ -1,0 +1,53 @@
+tabs:
+  main:
+    display: Primär
+    sections:
+      -
+        display: 'Titel etc.'
+        fields:
+          -
+            handle: website_title
+            field:
+              type: text
+              display: Website-TItel
+              instructions: 'Wird z.B. im manifest.json für PWA verwendet.'
+              localizable: true
+      -
+        display: Logos
+        fields:
+          -
+            handle: main_logo
+            field:
+              max_files: 1
+              container: assets
+              folder: logos
+              type: assets
+              display: Haupt-Logo
+              localizable: false
+              width: 50
+          -
+            handle: main_logo_dark
+            field:
+              max_files: 1
+              container: assets
+              folder: logos
+              type: assets
+              display: Haupt-Logo Dark Mode
+              localizable: false
+              width: 50
+  seo:
+    display: SEO
+    sections:
+      -
+        display: SEO
+        fields:
+          -
+            import: seo
+  favicons_tab:
+    display: Favicons
+    sections:
+      -
+        display: Favicons
+        fields:
+          -
+            import: favicons
