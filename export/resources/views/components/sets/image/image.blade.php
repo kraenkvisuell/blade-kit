@@ -1,9 +1,11 @@
 @props(['set', 'ratio', 'url', 'alt'])
 
 @php
+    $aspectRatioClass = '';
     if ($set->force_ratio) {
         $ratioArr = explode(':', $set->ratio);
         $imgRatio = intval($ratioArr[0]) / intval($ratioArr[1]);
+        $aspectRatioClass = 'aspect-' . implode('/', $ratioArr);
     } else {
         $imgRatio = $ratio->raw();
     }
@@ -37,27 +39,45 @@
         }
     }
 
-    $fit = $set->force_ratio ? 'crop_focal' : 'max';
+    $crop = $set->force_ratio ? true : false;
+    $file = $set->file;
 
+    $hasFocus = $file->has_focus;
+    $focus = $file->focus_css;
 @endphp
 
 <div class="flex justify-center">
-    <div class="grid gap-1 {{ $maxWidth }}">
+    <div class="w-full grid gap-1 {{ $maxWidth }}">
         <picture>
-            <s:glide src="{{ $url }}" format="webp" width="{{ $dimensions['lg']['width'] }}"
-                height="{{ $dimensions['lg']['height'] }}" fit="{{ $fit }}" quality="80">
-                <source media="(min-width:800px)" srcset="{{ $url }}">
-            </s:glide>
+            <source media="(min-width:800px)"
+                srcset="{{ cdnImage($set->file, [
+                    'crop' => $crop,
+                    'hasFocus' => $hasFocus,
+                    'focus' => $focus,
+                    'fit' => [$dimensions['lg']['width'], $dimensions['lg']['height']],
+                    'width' => $dimensions['lg']['width'],
+                    'height' => $dimensions['lg']['height'],
+                ]) }}">
 
-            <s:glide src="{{ $url }}" format="webp" width="{{ $dimensions['md']['width'] }}"
-                height="{{ $dimensions['md']['height'] }}" fit="{{ $fit }}" quality="80">
-                <source media="(min-width:600px)" srcset="{{ $url }}">
-            </s:glide>
+            <source media="(min-width:600px)"
+                srcset="{{ cdnImage($set->file, [
+                    'crop' => $crop,
+                    'hasFocus' => $hasFocus,
+                    'focus' => $focus,
+                    'fit' => [$dimensions['md']['width'], $dimensions['md']['height']],
+                    'width' => $dimensions['md']['width'],
+                    'height' => $dimensions['md']['height'],
+                ]) }}">
 
-            <s:glide src="{{ $url }}" format="webp" width="{{ $dimensions['default']['width'] }}"
-                height="{{ $dimensions['default']['height'] }}" fit="{{ $fit }}" quality="80">
-                <img src="{{ $url }}" alt="{{ $alt }}" />
-            </s:glide>
+            <img src="{{ cdnImage($set->file, [
+                'crop' => $crop,
+                'hasFocus' => $hasFocus,
+                'focus' => $focus,
+                'fit' => [$dimensions['default']['width'], $dimensions['default']['height']],
+                'width' => $dimensions['default']['width'],
+                'height' => $dimensions['default']['height'],
+            ]) }}"
+                loading="lazy" alt="{{ $alt }}" class="w-full {{ $aspectRatioClass }}" />
         </picture>
 
         <x-sets.image.captions :$set />

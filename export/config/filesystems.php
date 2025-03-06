@@ -66,11 +66,17 @@ return [
         ],
 
         'assets' => [
-            'driver' => 'local',
-            'root' => public_path('assets'),
-            'url' => '/assets',
-            'visibility' => 'public',
+            'driver' => 's3',
+            'key' => env('CLOUD_ACCESS_KEY_ID'),
+            'secret' => env('CLOUD_SECRET_ACCESS_KEY'),
+            'region' => env('CLOUD_DEFAULT_REGION'),
+            'bucket' => env('CLOUD_BUCKET'),
+            'url' => env('CLOUD_URL'),
+            'endpoint' => env('CLOUD_ENDPOINT'),
+            'use_path_style_endpoint' => env('CLOUD_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
+            'root' => 'assets',
+            'visibility' => 'public',
         ],
 
     ],

@@ -1,5 +1,5 @@
 ---
-id: home
+id: 853f849e-a059-402d-bf8c-b81d93a7ecd3
 blueprint: pages
 title: Home
 template: default

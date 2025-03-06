@@ -1,14 +1,26 @@
 export_paths:
+  - .env
   - .env.example
-  - content
+  - app/Listeners
+  - config/app.php
   - config/filesystems.php
+  - config/site.php
   - config/statamic/assets.php
+  - config/statamic/cp.php
+  - config/statamic/eloquent-driver.php
+  - config/statamic/system.php
+  - content
+  - lang
+  - package.json
+  - postcss.config.js
+  - public/robots.txt
+  - public/manifest.json
   - resources/blueprints
+  - resources/css/site.css
   - resources/fieldsets
   - resources/fonts
-  - resources/css/site.css
   - resources/js/site.js
   - resources/psd
+  - resources/sites.yaml
   - resources/views
-  - package.json
   - vite.config.js

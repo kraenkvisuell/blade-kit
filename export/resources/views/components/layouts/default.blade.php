@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <x-parts.favicons :$page :$settings />
+    <x-parts.seo :$page :$settings />
 
     <link rel="manifest" href="/manifest.json">
 
@@ -17,8 +18,6 @@
             <script src="https://cdn.usefathom.com/script.js" data-site="{{ config('services.fathom.key') }}" defer></script>
         @endif
     @endproduction
-
-    <title>{{ $page->title }}</title>
 
     @vite(['resources/css/site.css', 'resources/js/site.js'])
 </head>
