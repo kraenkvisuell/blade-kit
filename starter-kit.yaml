@@ -9,6 +9,7 @@ export_paths:
   - config/statamic/eloquent-driver.php
   - config/statamic/system.php
   - content
+  - helpers.php
   - lang
   - package.json
   - postcss.config.js
