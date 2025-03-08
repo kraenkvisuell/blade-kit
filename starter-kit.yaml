@@ -1,5 +1,4 @@
 export_paths:
-  - .env
   - .env.example
   - app/Listeners
   - config/app.php
@@ -24,3 +23,9 @@ export_paths:
   - resources/sites.yaml
   - resources/views
   - vite.config.js
+dependencies:
+  laravel/horizon: ^5.30
+  league/flysystem-aws-s3-v3: '*'
+dependencies_dev:
+  barryvdh/laravel-debugbar: ^3.8.1
+  laravel-lang/lang: ^15.19

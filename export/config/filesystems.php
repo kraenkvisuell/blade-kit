@@ -75,7 +75,7 @@ return [
             'endpoint' => env('CLOUD_ENDPOINT'),
             'use_path_style_endpoint' => env('CLOUD_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
-            'root' => 'assets',
+            'root' => env('CLOUD_ROOT'),
             'visibility' => 'public',
         ],
 

@@ -1,6 +1,8 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import laravel from 'laravel-vite-plugin'
 // import vue2 from '@vitejs/plugin-vue2';
+
+const env = loadEnv('', '')
 
 export default defineConfig({
     plugins: [
@@ -19,7 +21,7 @@ export default defineConfig({
         // vue2(),
     ],
     server: {
-        origin: 'https://dummy.test:5173',
+        origin: 'https://' + env.VITE_SLUG + '.test:5173',
         cors: true,
     }
 })
