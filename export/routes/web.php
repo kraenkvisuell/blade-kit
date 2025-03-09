@@ -1,6 +1,6 @@
 <?php
 
-use Statamic\Eloquent\Entries\Entry;
+use Statamic\Facades\Entry;
 use Illuminate\Support\Facades\Route;
 
 Route::statamic('/', 'default', function (Request $request) {

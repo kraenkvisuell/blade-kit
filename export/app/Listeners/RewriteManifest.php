@@ -11,7 +11,6 @@ class RewriteManifest
 {
     public function handle(GlobalSetSaved $event): void
     {
-
         if ($event->globals?->handle() === 'settings') {
             $globalSet = GlobalSet::findByHandle('settings')->inDefaultSite();
             $name = $globalSet->get('website_title') ?: $globalSet->get('browser_title');
@@ -31,7 +30,7 @@ class RewriteManifest
                     $data['icons'][] = [
                         'sizes' => $size . 'x' . $size,
                         'type' => 'image/' . Str::afterLast($path, '.'),
-                        'src' => '/assets/' . $path,
+                        'src' => config('app.image_cdn') . '/' . config('filesystems.disks.assets.root') . '/' . $path,
                     ];
                 }
             }
