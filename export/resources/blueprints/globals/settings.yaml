@@ -19,8 +19,7 @@ tabs:
             handle: main_logo
             field:
               max_files: 1
-              container: assets
-              folder: logos
+              container: logos
               type: assets
               display: Haupt-Logo
               localizable: false
@@ -29,10 +28,9 @@ tabs:
             handle: main_logo_dark
             field:
               max_files: 1
-              container: assets
-              folder: logos
+              container: logos
               type: assets
-              display: Haupt-Logo Dark Mode
+              display: 'Haupt-Logo Dark Mode'
               localizable: false
               width: 50
   seo:

@@ -24,6 +24,7 @@ export_paths:
   - resources/sites.yaml
   - resources/views
   - routes/web.php
+  - stubs
   - vite.config.js
 dependencies:
   laravel/horizon: ^5.30

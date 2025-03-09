@@ -19,8 +19,7 @@ fields:
     handle: favicon_512x512
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -31,8 +30,7 @@ fields:
     handle: favicon_256x256
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -43,8 +41,7 @@ fields:
     handle: favicon_192x192
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -55,8 +52,7 @@ fields:
     handle: favicon_144x144
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -67,8 +63,7 @@ fields:
     handle: favicon_96x96
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -79,8 +74,7 @@ fields:
     handle: favicon_48x48
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -91,8 +85,7 @@ fields:
     handle: favicon_32x32
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -103,8 +96,7 @@ fields:
     handle: favicon_16x16
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -122,8 +114,7 @@ fields:
     handle: favicon_dark_512x512
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -134,8 +125,7 @@ fields:
     handle: favicon_dark_256x256
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -146,8 +136,7 @@ fields:
     handle: favicon_dark_192x192
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -158,8 +147,7 @@ fields:
     handle: favicon_dark_144x144
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -170,8 +158,7 @@ fields:
     handle: favicon_dark_96x96
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -182,8 +169,7 @@ fields:
     handle: favicon_dark_48x48
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -194,8 +180,7 @@ fields:
     handle: favicon_dark_32x32
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets
@@ -206,8 +191,7 @@ fields:
     handle: favicon_dark_16x16
     field:
       max_files: 1
-      container: assets
-      folder: favicons
+      container: favicons
       restrict: true
       show_set_alt: false
       type: assets

@@ -46,23 +46,37 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+            'root' => public_path(),
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
         ],
 
-        's3' => [
-            'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
-            'url' => env('AWS_URL'),
-            'endpoint' => env('AWS_ENDPOINT'),
-            'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+        'placeholders' => [
+            'driver' => 'local',
+            'root' => public_path('placeholders'),
+            'url' => '/placeholders',
+            'visibility' => 'public',
             'throw' => false,
-            // 'visibility' => 'public', // https://statamic.dev/assets#visibility
+            'report' => false,
+        ],
+
+        'logos' => [
+            'driver' => 'local',
+            'root' => public_path('logos'),
+            'url' => '/logos',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
+        'favicons' => [
+            'driver' => 'local',
+            'root' => public_path('favicons'),
+            'url' => '/favicons',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
         ],
 
         'assets' => [
