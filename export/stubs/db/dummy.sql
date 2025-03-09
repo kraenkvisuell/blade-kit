@@ -4,7 +4,7 @@
 -- https://tableplus.com/
 --
 -- Database: dummy
--- Generation Time: 2025-03-08 23:16:14.5650
+-- Generation Time: 2025-03-09 14:05:53.6580
 -- -------------------------------------------------------------
 
 
@@ -151,6 +151,20 @@ CREATE TABLE "public"."global_sets" (
     PRIMARY KEY ("id")
 );
 
+DROP TABLE IF EXISTS "public"."group_user";
+-- This script only contains the table creation statements and does not fully represent the table in the database. Do not use it as a backup.
+
+-- Sequence and defined type
+CREATE SEQUENCE IF NOT EXISTS group_user_id_seq;
+
+-- Table Definition
+CREATE TABLE "public"."group_user" (
+    "id" int8 NOT NULL DEFAULT nextval('group_user_id_seq'::regclass),
+    "user_id" int8 NOT NULL,
+    "group_id" varchar(255) NOT NULL,
+    PRIMARY KEY ("id")
+);
+
 DROP TABLE IF EXISTS "public"."job_batches";
 -- This script only contains the table creation statements and does not fully represent the table in the database. Do not use it as a backup.
 
@@ -218,6 +232,16 @@ CREATE TABLE "public"."navigations" (
     PRIMARY KEY ("id")
 );
 
+DROP TABLE IF EXISTS "public"."password_activation_tokens";
+-- This script only contains the table creation statements and does not fully represent the table in the database. Do not use it as a backup.
+
+-- Table Definition
+CREATE TABLE "public"."password_activation_tokens" (
+    "email" varchar(255) NOT NULL,
+    "token" varchar(255) NOT NULL,
+    "created_at" timestamp(0)
+);
+
 DROP TABLE IF EXISTS "public"."password_reset_tokens";
 -- This script only contains the table creation statements and does not fully represent the table in the database. Do not use it as a backup.
 
@@ -227,6 +251,20 @@ CREATE TABLE "public"."password_reset_tokens" (
     "token" varchar(255) NOT NULL,
     "created_at" timestamp(0),
     PRIMARY KEY ("email")
+);
+
+DROP TABLE IF EXISTS "public"."role_user";
+-- This script only contains the table creation statements and does not fully represent the table in the database. Do not use it as a backup.
+
+-- Sequence and defined type
+CREATE SEQUENCE IF NOT EXISTS role_user_id_seq;
+
+-- Table Definition
+CREATE TABLE "public"."role_user" (
+    "id" int8 NOT NULL DEFAULT nextval('role_user_id_seq'::regclass),
+    "user_id" int8 NOT NULL,
+    "role_id" varchar(255) NOT NULL,
+    PRIMARY KEY ("id")
 );
 
 DROP TABLE IF EXISTS "public"."sessions";
@@ -329,10 +367,14 @@ CREATE TABLE "public"."users" (
     "name" varchar(255) NOT NULL,
     "email" varchar(255) NOT NULL,
     "email_verified_at" timestamp(0),
-    "password" varchar(255) NOT NULL,
+    "password" varchar(255),
     "remember_token" varchar(100),
     "created_at" timestamp(0),
     "updated_at" timestamp(0),
+    "super" bool NOT NULL DEFAULT false,
+    "avatar" varchar(255),
+    "preferences" json,
+    "last_login" timestamp(0),
     PRIMARY KEY ("id")
 );
 
@@ -348,8 +390,8 @@ INSERT INTO "public"."entries" ("id", "site", "origin_id", "published", "slug", 
 ('da385716-8c2c-4b1f-81d9-363707b51974', 'default', NULL, 't', 'bar', '/bar', NULL, NULL, 'pages', 'page', '{"seo": {"browser_title": null, "meta_description": null}, "title": "Anim magna aute", "updated_by": "a134c226-b5ed-442f-bc9d-538cbb00876c"}', '2025-02-07 14:36:49', '2025-02-07 14:36:49');
 
 INSERT INTO "public"."global_set_variables" ("id", "handle", "locale", "origin", "data", "created_at", "updated_at") VALUES
-(1, 'settings', 'default', NULL, '{"main_logo": "logos/logo-dummy.png", "browser_title": "Sit officia aliquip deserunt", "favicon_96x96": "favicons/icon-96.png", "website_title": "¯\\_(ツ)_/¯", "main_logo_dark": "logos/logo-dummy-dark.png", "favicon_512x512": "favicons/icon-512.png", "meta_description": "Qui nisi consequat consequat tempor reprehenderit incididunt aute consectetur ipsum ut minim in ut.", "favicon_dark_96x96": "favicons/icon-96-dark.png", "favicon_dark_512x512": "favicons/icon-512-dark.png"}', '2025-03-04 09:49:43', '2025-03-04 09:49:43'),
-(2, 'settings', 'en', 'default', '{"main_logo": "logos/logo-dummy.png", "browser_title": "Sit officia aliquip deserunt", "favicon_96x96": "favicons/icon-96.png", "website_title": "¯\\_(ツ)_/¯", "main_logo_dark": "logos/logo-dummy-dark.png", "favicon_512x512": "favicons/icon-512.png", "meta_description": "Qui nisi consequat consequat tempor reprehenderit incididunt aute consectetur ipsum ut minim in ut.", "favicon_dark_96x96": "favicons/icon-96-dark.png", "favicon_dark_512x512": "favicons/icon-512-dark.png"}', '2025-03-04 09:49:43', '2025-03-04 09:49:43');
+(1, 'settings', 'default', NULL, '{"dark_mode": null, "main_logo": "logos/logo-dummy.png", "light_mode": null, "browser_title": "Sit officia aliquip deserunt", "favicon_16x16": null, "favicon_32x32": null, "favicon_48x48": null, "favicon_96x96": "favicons/icon-96.png", "website_title": "¯\\_(ツ)_/¯", "main_logo_dark": "logos/logo-dummy-dark.png", "favicon_144x144": null, "favicon_192x192": null, "favicon_256x256": null, "favicon_512x512": "favicons/icon-512.png", "favicons_section": null, "meta_description": "Qui nisi consequat consequat tempor reprehenderit incididunt aute consectetur ipsum ut minim in ut.", "favicon_dark_16x16": null, "favicon_dark_32x32": null, "favicon_dark_48x48": null, "favicon_dark_96x96": "favicons/icon-96-dark.png", "favicon_dark_144x144": null, "favicon_dark_192x192": null, "favicon_dark_256x256": null, "favicon_dark_512x512": "favicons/icon-512-dark.png"}', '2025-03-04 09:49:43', '2025-03-09 11:08:43'),
+(2, 'settings', 'en', 'default', '{"dark_mode": null, "main_logo": "logos/logo-dummy.png", "light_mode": null, "browser_title": "Sit officia aliquip deserunt", "favicon_16x16": null, "favicon_32x32": null, "favicon_48x48": null, "favicon_96x96": "favicons/icon-96.png", "website_title": "¯\\_(ツ)_/¯", "main_logo_dark": "logos/logo-dummy-dark.png", "favicon_144x144": null, "favicon_192x192": null, "favicon_256x256": null, "favicon_512x512": "favicons/icon-512.png", "favicons_section": null, "meta_description": "Qui nisi consequat consequat tempor reprehenderit incididunt aute consectetur ipsum ut minim in ut.", "favicon_dark_16x16": null, "favicon_dark_32x32": null, "favicon_dark_48x48": null, "favicon_dark_96x96": "favicons/icon-96-dark.png", "favicon_dark_144x144": null, "favicon_dark_192x192": null, "favicon_dark_256x256": null, "favicon_dark_512x512": "favicons/icon-512-dark.png"}', '2025-03-04 09:49:43', '2025-03-09 11:08:43');
 
 INSERT INTO "public"."global_sets" ("id", "handle", "title", "settings", "created_at", "updated_at") VALUES
 (1, 'settings', 'Einstellungen', '[]', '2025-02-14 16:30:14', '2025-02-14 16:30:14');
@@ -369,13 +411,17 @@ INSERT INTO "public"."migrations" ("id", "migration", "batch") VALUES
 (12, '2024_03_07_100000_create_navigations_table', 6),
 (13, '2024_03_07_100000_create_taxonomies_table', 7),
 (14, '2024_03_07_100000_create_terms_table', 8),
-(15, '2024_03_07_100000_create_tokens_table', 9);
+(15, '2024_03_07_100000_create_tokens_table', 9),
+(16, '2025_03_09_125555_statamic_auth_tables', 10);
 
 INSERT INTO "public"."navigations" ("id", "handle", "title", "settings", "created_at", "updated_at") VALUES
 (1, 'main_navigation', 'Hauptnavigation', '{"max_depth": 2, "collections": ["pages"], "expects_root": false, "select_across_sites": false}', '2025-01-31 10:42:54', '2025-01-31 10:42:54');
 
 INSERT INTO "public"."trees" ("id", "handle", "type", "locale", "tree", "settings", "created_at", "updated_at") VALUES
 (1, 'main_navigation', 'navigation', 'default', '[{"id": "d1164b21-6e7c-4c7d-b4c6-303b555f3fb6", "title": "Ipsum", "children": [{"id": "0477bb90-d16f-43e3-97b0-18087a632229", "entry": "72846eb4-114d-4e90-b48b-609d10188b7e"}, {"id": "ff05df71-8621-4cd1-9054-9aeaacbbe14f", "entry": "da385716-8c2c-4b1f-81d9-363707b51974"}, {"id": "b77002c5-82b8-4802-a88a-bbf70ec79f83", "entry": "4a020d65-c423-446a-b3c1-ff486f1e68c3"}]}, {"id": "b30649bc-fb14-4c9c-a2b4-eb3a405e0b61", "entry": "853f849e-a059-402d-bf8c-b81d93a7ecd2"}, {"id": "a50c933c-07da-4e2e-916a-55f00fc5e280", "entry": "74d50153-f84a-4921-b6b5-67f3101ac6df"}]', '[]', '2025-02-07 15:09:45', '2025-02-07 15:09:45');
+
+INSERT INTO "public"."users" ("id", "name", "email", "email_verified_at", "password", "remember_token", "created_at", "updated_at", "super", "avatar", "preferences", "last_login") VALUES
+(2, 'Kraenk', 'cms@kraenk.de', NULL, '$2y$12$Q0PYb124CIrR1YMJhensiOSLJRAeSEq3AIsG.ICHHcIRR80Tv/cQC', NULL, '2025-03-09 13:05:15', '2025-03-09 13:05:15', 't', NULL, NULL, NULL);
 
 
 
@@ -420,6 +466,10 @@ CREATE INDEX jobs_queue_index ON public.jobs USING btree (queue);
 
 -- Indices
 CREATE UNIQUE INDEX navigations_handle_unique ON public.navigations USING btree (handle);
+
+
+-- Indices
+CREATE INDEX password_activation_tokens_email_index ON public.password_activation_tokens USING btree (email);
 
 
 -- Indices

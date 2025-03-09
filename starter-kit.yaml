@@ -1,10 +1,14 @@
 export_paths:
   - .env.example
+  - app/Console/Commands
   - app/Listeners
+  - app/Models
   - config/app.php
+  - config/auth.php
   - config/filesystems.php
   - config/site.php
   - config/statamic/assets.php
+  - config/statamic/users.php
   - config/statamic/cp.php
   - config/statamic/eloquent-driver.php
   - config/statamic/system.php
