@@ -1,6 +1,6 @@
 export_paths:
   - .env.example
-  - app/Console/Commands
+  - app/Console/Commands/StarterKit
   - app/Listeners
   - app/Models
   - config/app.php
