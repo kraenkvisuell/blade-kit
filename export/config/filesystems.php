@@ -34,6 +34,11 @@ return [
             'root' => base_path(),
         ],
 
+        'stubs' => [
+            'driver' => 'local',
+            'root' => base_path('stubs'),
+        ],
+
         'public_folder' => [
             'driver' => 'local',
             'root' => public_path(),
