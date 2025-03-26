@@ -2,6 +2,10 @@
 
 function cdnImage($image, array $options = [])
 {
+    if (!$image) {
+        return '';
+    }
+
     $output = $options['fileformat'] ?? 'webp';
 
     $transformations = ['output=' . $output];
