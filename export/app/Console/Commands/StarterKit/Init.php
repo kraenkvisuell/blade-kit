@@ -36,7 +36,7 @@ class Init extends Command
         foreach ($allFilePaths as $filePath) {
             $file = Storage::disk('stubs')->get($filePath);
             $this->info('copying ' . $filePath);
-            Storage::disk('assets')->put($filePath, $file, 'public');
+            Storage::disk('baseS3')->put($filePath, $file, 'public');
         }
     }
 }

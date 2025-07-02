@@ -103,6 +103,34 @@ return [
             'visibility' => 'public',
         ],
 
+        'assets' => [
+            'driver' => 's3',
+            'key' => env('CLOUD_ACCESS_KEY_ID'),
+            'secret' => env('CLOUD_SECRET_ACCESS_KEY'),
+            'region' => env('CLOUD_DEFAULT_REGION'),
+            'bucket' => env('CLOUD_BUCKET'),
+            'url' => env('CLOUD_URL'),
+            'endpoint' => env('CLOUD_ENDPOINT'),
+            'use_path_style_endpoint' => env('CLOUD_USE_PATH_STYLE_ENDPOINT', false),
+            'throw' => false,
+            'root' => env('CLOUD_ROOT') . '/assets',
+            'visibility' => 'public',
+        ],
+
+        'baseS3' => [
+            'driver' => 's3',
+            'key' => env('CLOUD_ACCESS_KEY_ID'),
+            'secret' => env('CLOUD_SECRET_ACCESS_KEY'),
+            'region' => env('CLOUD_DEFAULT_REGION'),
+            'bucket' => env('CLOUD_BUCKET'),
+            'url' => env('CLOUD_URL'),
+            'endpoint' => env('CLOUD_ENDPOINT'),
+            'use_path_style_endpoint' => env('CLOUD_USE_PATH_STYLE_ENDPOINT', false),
+            'throw' => false,
+            'root' => env('CLOUD_ROOT'),
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*
