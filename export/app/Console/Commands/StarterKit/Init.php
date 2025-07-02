@@ -31,7 +31,7 @@ class Init extends Command
         DB::unprepared(file_get_contents($dbPath));
         $this->info('db seeded from stub!');
 
-        $allFilePaths = Storage::disk('stubs')->allFiles('/');
+        $allFilePaths = Storage::disk('stubs')->allFiles('assets');
 
         foreach ($allFilePaths as $filePath) {
             $file = Storage::disk('stubs')->get($filePath);
