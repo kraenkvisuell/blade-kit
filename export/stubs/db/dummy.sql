@@ -239,7 +239,7 @@ DROP TABLE IF EXISTS "public"."password_activation_tokens";
 CREATE TABLE "public"."password_activation_tokens" (
     "email" varchar(255) NOT NULL,
     "token" varchar(255) NOT NULL,
-    "created_at" timestamp(0)   x
+    "created_at" timestamp(0)
 );
 
 DROP TABLE IF EXISTS "public"."password_reset_tokens";
@@ -392,6 +392,7 @@ CREATE TABLE "public"."sites" (
     "order" int8 NOT NULL DEFAULT 1,
     "url" varchar(255) NOT NULL,
     "locale" varchar(255) NOT NULL,
+    "lang" varchar(255) NOT NULL,
     "attributes" varchar(255) NOT NULL,
     "created_at" timestamp(0),
     "updated_at" timestamp(0),
@@ -445,14 +446,12 @@ INSERT INTO "public"."users" ("id", "name", "email", "email_verified_at", "passw
 (2, 'Kraenk', 'cms@kraenk.de', NULL, '$2y$12$Q0PYb124CIrR1YMJhensiOSLJRAeSEq3AIsG.ICHHcIRR80Tv/cQC', NULL, '2025-03-09 13:05:15', '2025-03-09 13:05:15', 't', NULL, NULL, NULL);
 
 INSERT INTO "public"."sites" ("id", "handle", "name", "order", "url", "locale", "lang", "attributes", "created_at", "updated_at") VALUES
-(1, 'default', 'Deutsch', 1, '/', 'de_DE', '[]', '2025-03-09 13:05:15', '2025-03-09 13:05:15'),
-(2, 'en', 'English', 2, '/en', 'en_US', '[]', '2025-03-09 13:05:15', '2025-03-09 13:05:15');
+(1, 'default', 'Deutsch', 1, '/', 'de_DE', 'de', '[]', '2025-03-09 13:05:15', '2025-03-09 13:05:15'),
+(2, 'en', 'English', 2, '/en', 'en_US', 'en', '[]', '2025-03-09 13:05:15', '2025-03-09 13:05:15');
 
 
 -- Indices
 CREATE UNIQUE INDEX collections_handle_unique ON public.collections USING btree (handle);
-CREATE UNIQUE INDEX sites_handle_unique ON public.sites USING btree (handle);
-
 
 -- Indices
 CREATE INDEX entries_site_index ON public.entries USING btree (site);
@@ -525,3 +524,7 @@ CREATE INDEX trees_locale_index ON public.trees USING btree (locale);
 
 -- Indices
 CREATE UNIQUE INDEX users_email_unique ON public.users USING btree (email);
+
+
+-- Indices
+CREATE UNIQUE INDEX sites_handle_unique ON public.sites USING btree (handle);
