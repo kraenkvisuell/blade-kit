@@ -5,21 +5,42 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
 
-    <x-parts.favicons :$page :$settings />
-    <x-parts.seo :$page :$settings />
+    <x-parts.favicons
+        :$page
+        :$settings
+    />
+    <x-parts.seo
+        :$page
+        :$settings
+    />
 
-    <link rel="manifest" href="/manifest.json">
+    <link
+        rel="manifest"
+        href="/manifest.json"
+    >
 
     @production
         @if (config('services.fathom.key'))
-            <script src="https://cdn.usefathom.com/script.js" data-site="{{ config('services.fathom.key') }}" defer></script>
+            <script
+                src="https://cdn.usefathom.com/script.js"
+                data-site="{{ config('services.fathom.key') }}"
+                defer
+            ></script>
         @endif
     @endproduction
 
     @vite(['resources/css/site.css', 'resources/js/site.js'])
+
+    @livewireStyles
 </head>
 
 <body class="w-full bg-base-50 dark:bg-base-900 text-base-900 dark:text-base-200 font-default font-light leading-normal">
@@ -30,6 +51,8 @@
             {{ $slot }}
         </div>
     </div>
+
+    @livewireScripts
 </body>
 
 </html>

@@ -36,3 +36,4 @@ dependencies:
 dependencies_dev:
   barryvdh/laravel-debugbar: ^3.8.1
   laravel-lang/lang: ^15.19
+  livewire/livewire: ^3.6

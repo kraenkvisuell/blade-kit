@@ -5,10 +5,14 @@
         <s:nav:main_navigation scope="navItem">
             <li class="relative group px-4">
                 @if (@$navItem['is_entry'])
-                    <a href="{{ $navItem['url'] }}" @class([
-                        'relative z-20 hover:underline',
-                        'current' => $navItem['is_current'] || $navItem['is_parent'],
-                    ])>
+                    <a
+                        wire:navigate.hover
+                        href="{{ $navItem['url'] }}"
+                        @class([
+                            'relative z-20 hover:underline',
+                            'current' => $navItem['is_current'] || $navItem['is_parent'],
+                        ])
+                    >
                         {{ $navItem['title'] }}
                     </a>
                 @else
@@ -20,8 +24,6 @@
                     </span>
                 @endif
 
-
-
                 @if (count($navItem['children']) > 0)
                     <div
                         class="z-10 min-w-full absolute top-0 left-0 px-4 pt-8 pb-4 bg-white dark:bg-base-950 
@@ -30,10 +32,14 @@
                         <ul>
                             @foreach ($navItem['children'] as $child)
                                 <li>
-                                    <a href="{{ $child['url'] }}" @class([
-                                        'block text-sm py-1 hover:underline whitespace-nowrap',
-                                        'current' => $child['is_current'],
-                                    ])>
+                                    <a
+                                        wire:navigate.hover
+                                        href="{{ $child['url'] }}"
+                                        @class([
+                                            'block text-sm py-1 hover:underline whitespace-nowrap',
+                                            'current' => $child['is_current'],
+                                        ])
+                                    >
                                         {{ $child['title'] }}
                                     </a>
                                 </li>
