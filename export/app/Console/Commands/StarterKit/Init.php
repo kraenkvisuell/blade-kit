@@ -31,6 +31,14 @@ class Init extends Command
         DB::unprepared(file_get_contents($dbPath));
         $this->info('db seeded from stub!');
 
+        $migrationsPath = Storage::disk('base')->allFiles('database/migrations');
+        foreach ($migrationsPath as $filePath) {
+            $fileName = Str::afterLast($filePath, '/');
+            if (stristr($fileName, '_create_sites_table')) {
+                Storage::disk('base')->delete($filePath);
+            }
+        }
+
         $allFilePaths = Storage::disk('stubs')->allFiles('assets');
 
         foreach ($allFilePaths as $filePath) {
