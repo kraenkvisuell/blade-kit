@@ -46,4 +46,9 @@ class User extends Authenticatable
             'preferences' => 'json',
         ];
     }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new \Statamic\Notifications\PasswordReset($token));
+    }
 }
