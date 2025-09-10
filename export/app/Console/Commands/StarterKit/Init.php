@@ -22,6 +22,8 @@ class Init extends Command
             'helpers.php'
         ];
 
+        Storage::disk('base')->delete('database/.gitignore');
+
         Storage::disk('base')
             ->put('composer.json', json_encode($composerJson, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
 
