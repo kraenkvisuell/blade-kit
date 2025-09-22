@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 function cdnImage($image, array $options = [])
 {
     if (!$image) {
@@ -39,4 +41,21 @@ function cdnImage($image, array $options = [])
     return config('app.image_cdn')
         . '/' . config('filesystems.disks.assets.root') . '/' . $image['path']
         . '?twic=v1/' . implode('/', $transformations);
+}
+
+function ensureUrl($str)
+{
+    $str = trim($str);
+
+    if (
+        !Str::startsWith($str, '/')
+        && !Str::startsWith($str, 'http://')
+        && !Str::startsWith($str, 'https://')
+        && !Str::startsWith($str, 'mailto:')
+        && !Str::startsWith($str, 'tel:')
+    ) {
+        $str = 'https://' . $str;
+    }
+
+    return $str;
 }

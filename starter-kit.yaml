@@ -1,6 +1,7 @@
 export_paths:
   - .env.example
   - app/Console/Commands/StarterKit
+  - app/Http
   - app/Listeners
   - app/Models
   - config/app.php
@@ -33,9 +34,10 @@ export_paths:
 dependencies:
   laravel/horizon: ^5.30
   league/flysystem-aws-s3-v3: '*'
+  livewire/livewire: ^3.6
   symfony/http-client: ^7.3
   symfony/postmark-mailer: ^7.3
 dependencies_dev:
   barryvdh/laravel-debugbar: ^3.8.1
   laravel-lang/lang: ^15.19
-  livewire/livewire: ^3.6
+  
