@@ -443,7 +443,19 @@ INSERT INTO "public"."trees" ("id", "handle", "type", "locale", "tree", "setting
 (1, 'main_navigation', 'navigation', 'default', '[{"id": "d1164b21-6e7c-4c7d-b4c6-303b555f3fb6", "title": "Ipsum", "children": [{"id": "0477bb90-d16f-43e3-97b0-18087a632229", "entry": "72846eb4-114d-4e90-b48b-609d10188b7e"}, {"id": "ff05df71-8621-4cd1-9054-9aeaacbbe14f", "entry": "da385716-8c2c-4b1f-81d9-363707b51974"}, {"id": "b77002c5-82b8-4802-a88a-bbf70ec79f83", "entry": "4a020d65-c423-446a-b3c1-ff486f1e68c3"}]}, {"id": "b30649bc-fb14-4c9c-a2b4-eb3a405e0b61", "entry": "853f849e-a059-402d-bf8c-b81d93a7ecd2"}, {"id": "a50c933c-07da-4e2e-916a-55f00fc5e280", "entry": "74d50153-f84a-4921-b6b5-67f3101ac6df"}]', '[]', '2025-02-07 15:09:45', '2025-02-07 15:09:45');
 
 INSERT INTO "public"."users" ("id", "name", "email", "email_verified_at", "password", "remember_token", "created_at", "updated_at", "super", "avatar", "preferences", "last_login") VALUES
-(2, 'Kraenk', 'cms@kraenk.de', NULL, '$2y$12$Q0PYb124CIrR1YMJhensiOSLJRAeSEq3AIsG.ICHHcIRR80Tv/cQC', NULL, '2025-03-09 13:05:15', '2025-03-09 13:05:15', 't', NULL, NULL, NULL);
+(2, 'Basti', 'basti@kraenk.de', NULL, '$2y$12$lF8JSMqRto0koUZtK5.eiuqXEPhUF1FedetjMVMrzE8GiCJ/XG6c6', NULL, '2025-03-09 13:05:15', '2025-03-09 13:05:15', 't', NULL, NULL, NULL);
+
+INSERT INTO "public"."users" ("id", "name", "email", "email_verified_at", "password", "remember_token", "created_at", "updated_at", "super", "avatar", "preferences", "last_login") VALUES
+(3, 'Tobi', 'bender@kraenk.de', NULL, '$2y$12$bZUiMtfWnQSmbsHZoeeWnukHBL2.34TVpmrn5t2hDjcwhgraCnm7e', NULL, '2025-03-09 13:05:15', '2025-03-09 13:05:15', 't', NULL, NULL, NULL);
+
+INSERT INTO "public"."users" ("id", "name", "email", "email_verified_at", "password", "remember_token", "created_at", "updated_at", "super", "avatar", "preferences", "last_login") VALUES
+(4, 'Stephan', 'trischler@kraenk.de', NULL, '$2y$12$gbaB8qWnfdXpiw02MHOhju0r0M4g4DUF/sVNC.Np0aUdiNz5pT8ue', NULL, '2025-03-09 13:05:15', '2025-03-09 13:05:15', 't', NULL, NULL, NULL);
+
+INSERT INTO "public"."users" ("id", "name", "email", "email_verified_at", "password", "remember_token", "created_at", "updated_at", "super", "avatar", "preferences", "last_login") VALUES
+(5, 'Didem', 'diden@kraenk.de', NULL, '$2y$12$qSyYDwn7UwtgOEb.R2zyiOlC/ztTH9QKMH5YCYAy7P7j9s9zqyxEW', NULL, '2025-03-09 13:05:15', '2025-03-09 13:05:15', 't', NULL, NULL, NULL);
+
+INSERT INTO "public"."users" ("id", "name", "email", "email_verified_at", "password", "remember_token", "created_at", "updated_at", "super", "avatar", "preferences", "last_login") VALUES
+(6, 'Wiebke', 'wiebke@kraenk.de', NULL, '$2y$12$RJ/8IiXgmkiMMLdwXh8FE.pA5CpLDasWbx9Ga86Yt1Sfb29S75Lee', NULL, '2025-03-09 13:05:15', '2025-03-09 13:05:15', 't', NULL, NULL, NULL);
 
 INSERT INTO "public"."sites" ("id", "handle", "name", "order", "url", "locale", "lang", "attributes", "created_at", "updated_at") VALUES
 (1, 'default', 'Deutsch', 1, '/', 'de_DE', 'de', '[]', '2025-03-09 13:05:15', '2025-03-09 13:05:15'),
