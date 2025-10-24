@@ -2,7 +2,6 @@ export_paths:
   - .bladeignore
   - .env.example
   - app/Console/Commands/StarterKit
-  - app/Http
   - app/Listeners
   - app/Models
   - config/app.php
