@@ -1,4 +1,5 @@
 export_paths:
+  - .bladeignore
   - .env.example
   - app/Console/Commands/StarterKit
   - app/Http
