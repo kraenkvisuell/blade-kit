@@ -5,7 +5,7 @@
 >
     <div
         @class([
-            'absolute top-[6px] left-1 rounded-xs h-[2px] w-[34px] transition-transform bg-black dark:bg-white',
+            'absolute top-[6px] left-1 rounded-xs h-[2px] w-[34px] transition-transform bg-black dark:bg-base-200',
         ])
         x-bind:class="{
             'translate-y-3': menuIsVisible,
@@ -15,7 +15,7 @@
 
     <div
         @class([
-            'absolute top-[18px] left-1 rounded-xs h-[2px] w-[34px] transition-opacity bg-black dark:bg-white',
+            'absolute top-[18px] left-1 rounded-xs h-[2px] w-[34px] transition-opacity bg-black dark:bg-base-200',
         ])
         x-bind:class="{
             'opacity-100': !menuIsVisible,
@@ -27,7 +27,7 @@
 
     <div
         @class([
-            'absolute top-[30px] left-1 rounded-xs h-[2px] w-[34px] transition-transform bg-black dark:bg-white',
+            'absolute top-[30px] left-1 rounded-xs h-[2px] w-[34px] transition-transform bg-black dark:bg-base-200',
         ])
         x-bind:class="{
             '-translate-y-3': menuIsVisible,

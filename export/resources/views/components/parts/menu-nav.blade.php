@@ -1,15 +1,15 @@
 @props(['settings'])
 
-<div class="fixed md:hidden inset-0 overflow-hidden pointer-events-none">
+<div class="fixed md:hidden inset-0 overflow-hidden pointer-events-none z-10">
     <div
-        class="absolute w-full h-full transition-transform z-10"
+        class="absolute w-full h-full transition-transform"
         x-cloak
         x-bind:class="{
             'translate-x-full': !menuIsVisible,
             'translate-x-0': menuIsVisible,
         }"
     >
-        <div class="absolute top-0 right-0 bg-white w-full h-full">
+        <div class="absolute top-0 right-0 bg-white dark:bg-base-950 w-full h-full">
             <div class="relative z-0 w-full h-full overflow-y-scroll overscroll-contain">
                 <nav class="pt-32 pl-9 pointer-events-auto">
                     <ul class="nav font-headline">
