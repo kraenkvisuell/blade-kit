@@ -14,12 +14,22 @@ tabs:
                 - required
               localizable: false
           -
-            handle: is_home
+            handle: has_hero
             field:
               type: toggle
-              display: 'Ist Homepage'
-              listable: true
+              display: 'Hat Hero'
               localizable: false
+          -
+            handle: hero
+            field:
+              type: group
+              display: Hero
+              localizable: false
+              if:
+                has_hero: 'equals true'
+              fields:
+                -
+                  import: hero
           -
             import: main_content
   sidebar:

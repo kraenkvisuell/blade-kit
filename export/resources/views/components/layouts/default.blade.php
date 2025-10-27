@@ -43,10 +43,57 @@
     @livewireStyles
 </head>
 
-<body class="w-full bg-base-50 dark:bg-base-900 text-base-900 dark:text-base-200 font-default font-light leading-normal">
+<body
+    class="
+        w-full bg-base-50 dark:bg-base-900 text-base-900 dark:text-base-200 font-default font-light leading-normal
+    "
+    x-data="{
+        menuIsVisible: false,
+        hamburgerIsDisabled: false,
+        hamburgerIsCross: false,
+        init() {
+            document.addEventListener('livewire:navigate', (e) => {
+                if (this.menuIsVisible) {
+                    this.closeMenu()
+                    e.preventDefault()
+    
+                    setTimeout(() => Livewire.navigate(e.detail.url), 250)
+                }
+            })
+        },
+        toggleMenu() {
+            if (!this.menuIsVisible) {
+                this.openMenu()
+            } else {
+                this.closeMenu()
+            }
+        },
+        openMenu() {
+            this.hamburgerIsDisabled = true
+            document.body.classList.add('overflow-y-hidden')
+            document.body.classList.remove('overflow-y-scoll')
+            this.menuIsVisible = true
+            setTimeout(() => this.hamburgerIsCross = true, 300)
+            setTimeout(() => this.hamburgerIsDisabled = false, 600)
+        },
+        closeMenu() {
+            this.hamburgerIsDisabled = true
+            this.hamburgerIsCross = false
+    
+            document.body.classList.remove('overflow-y-hidden')
+            document.body.classList.add('overflow-y-scoll')
+            setTimeout(() => this.menuIsVisible = false, 300)
+            setTimeout(() => this.hamburgerIsDisabled = false, 600)
+        }
+    }"
+>
+    <x-parts.menu-nav :$settings />
+
     <x-parts.header :$settings />
 
-    <div class="w-full min-h-screen flex flex-col gap-12 pt-64 pb-32">
+    <x-parts.hamburger />
+
+    <div class="w-full min-h-screen flex flex-col gap-12 pt-20 pb-32">
         <div class="w-full text-copy-base leading-6 min-h-screen">
             {{ $slot }}
         </div>

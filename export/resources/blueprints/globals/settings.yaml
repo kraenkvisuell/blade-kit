@@ -42,6 +42,13 @@ tabs:
         display: SEO
         fields:
           -
+            handle: seo_explanation
+            field:
+              type: section
+              instructions: 'Dies sind die Default-Einstellungen. Sie können pro Seite überschrieben werden.'
+              localizable: false
+              display: 'Default SEO Einstellungen'
+          -
             import: seo
   favicons_tab:
     display: Favicons
