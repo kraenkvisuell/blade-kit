@@ -453,7 +453,7 @@ INSERT INTO "public"."users" ("id", "name", "email", "email_verified_at", "passw
 (4, 'Stephan', 'trischler@kraenk.de', NULL, '$2y$12$gbaB8qWnfdXpiw02MHOhju0r0M4g4DUF/sVNC.Np0aUdiNz5pT8ue', NULL, '2025-03-09 13:05:15', '2025-03-09 13:05:15', 't', NULL, NULL, NULL);
 
 INSERT INTO "public"."users" ("id", "name", "email", "email_verified_at", "password", "remember_token", "created_at", "updated_at", "super", "avatar", "preferences", "last_login") VALUES
-(5, 'Didem', 'diden@kraenk.de', NULL, '$2y$12$qSyYDwn7UwtgOEb.R2zyiOlC/ztTH9QKMH5YCYAy7P7j9s9zqyxEW', NULL, '2025-03-09 13:05:15', '2025-03-09 13:05:15', 't', NULL, NULL, NULL);
+(5, 'Didem', 'didem@kraenk.de', NULL, '$2y$12$qSyYDwn7UwtgOEb.R2zyiOlC/ztTH9QKMH5YCYAy7P7j9s9zqyxEW', NULL, '2025-03-09 13:05:15', '2025-03-09 13:05:15', 't', NULL, NULL, NULL);
 
 INSERT INTO "public"."users" ("id", "name", "email", "email_verified_at", "password", "remember_token", "created_at", "updated_at", "super", "avatar", "preferences", "last_login") VALUES
 (6, 'Wiebke', 'wiebke@kraenk.de', NULL, '$2y$12$RJ/8IiXgmkiMMLdwXh8FE.pA5CpLDasWbx9Ga86Yt1Sfb29S75Lee', NULL, '2025-03-09 13:05:15', '2025-03-09 13:05:15', 't', NULL, NULL, NULL);
