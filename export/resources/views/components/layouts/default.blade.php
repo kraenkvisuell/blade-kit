@@ -38,6 +38,18 @@
         @endif
     @endproduction
 
+    <script
+        src="https://kit.fontawesome.com/06f205e81b.js"
+        crossorigin="anonymous"
+    ></script>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
     @vite(['resources/css/site.css', 'resources/js/site.js'])
 
     @livewireStyles
@@ -98,6 +110,8 @@
             {{ $slot }}
         </div>
     </div>
+
+    <x-parts.footer :$settings />
 
     @livewireScripts
 </body>

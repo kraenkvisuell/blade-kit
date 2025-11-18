@@ -9,7 +9,7 @@
         @endif
 
         <div @class([
-            'grid gap-12',
+            'flex flex-col gap-12',
             'pt-16' => $page->has_hero,
             'pt-28' => !$page->has_hero,
         ])>
@@ -19,7 +19,7 @@
                 </div>
             </x-shared.section>
 
-            <div class="grid gap-24">
+            <div class="flex flex-col gap-24">
                 @foreach ($page->content ?? [] as $set)
                     <x-dynamic-component
                         :component="'sets.' . $set->type"

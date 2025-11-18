@@ -35,6 +35,42 @@ tabs:
               display: 'Haupt-Logo Dark Mode'
               localizable: false
               width: 50
+  social_media_tab:
+    display: 'Social Media'
+    sections:
+      -
+        fields:
+          -
+            handle: social_media_links
+            field:
+              collapse: accordion
+              fullscreen: false
+              button_label: 'Social Media Link hinzufügen'
+              type: replicator
+              display: 'Social Media Links'
+              localizable: false
+              sets:
+                neue_setgruppe:
+                  display: 'Neue Setgruppe'
+                  sets:
+                    social_media_link:
+                      display: 'Social Media Link'
+                      icon: social-share
+                      fields:
+                        -
+                          handle: link
+                          field:
+                            type: text
+                            display: Link
+                            localizable: false
+                            width: 50
+                        -
+                          handle: link_text
+                          field:
+                            type: text
+                            display: Link-Text
+                            localizable: false
+                            width: 50
   seo:
     display: SEO
     sections:

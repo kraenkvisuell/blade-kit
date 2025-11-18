@@ -7,5 +7,11 @@
         <div class="editor">
             {!! $set->text !!}
         </div>
+
+        @if ($set->buttons)
+            <div>
+                <x-shared.buttons :buttons="$set->buttons" />
+            </div>
+        @endif
     </div>
 </x-shared.section>

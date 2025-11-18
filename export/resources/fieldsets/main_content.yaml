@@ -21,6 +21,8 @@ fields:
                   import: headline
                 -
                   import: main_bard
+                -
+                  import: buttons
             image:
               display: Bild
               icon: media-image-picture-orientation
@@ -37,3 +39,19 @@ fields:
                   import: headline
                 -
                   import: embed_video
+            cards:
+              display: Karten
+              icon: dashboard-layout
+              fields:
+                -
+                  import: headline
+                -
+                  import: cards
+            slideshow:
+              display: Slideshow
+              icon: media-image-picture-gallery
+              fields:
+                -
+                  import: headline
+                -
+                  import: slideshow

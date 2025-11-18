@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Str;
+use App\Services\EditorService;
 
 function cdnImage($image, array $options = [])
 {
@@ -56,6 +57,33 @@ function ensureUrl($str)
     ) {
         $str = 'https://' . $str;
     }
+
+    return $str;
+}
+
+function bardify($text)
+{
+    if (!$text) {
+        return '';
+    }
+
+    if (!is_string($text) && !is_array($text) && @$text->raw() && is_string(@$text->raw())) {
+        $text = json_decode($text->raw());
+    } elseif (is_string($text)) {
+        $text = json_decode($text);
+    }
+
+    return (new EditorService)->editor()->setContent(['content' => $text])->getHTML();
+}
+
+function refererIsLocal()
+{
+    return stristr(request()->headers->get('referer'), config('app.url'));
+}
+
+function transformText($str)
+{
+    $str = str_replace('®', '<sup class="relative top-[-0.3em]">®</sup>', $str);
 
     return $str;
 }
