@@ -40,7 +40,7 @@ dependencies:
   laravel/horizon: ^5.30
   league/flysystem-aws-s3-v3: '*'
   livewire/livewire: ^3.6
-  statamic-rad-pack/runway: ^8.7
+  statamic-rad-pack/runway: ^9.0
   symfony/http-client: ^7.3
   symfony/postmark-mailer: ^7.3
 dependencies_dev:
