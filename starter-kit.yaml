@@ -44,6 +44,5 @@ dependencies:
   symfony/http-client: ^7.3
   symfony/postmark-mailer: ^7.3
 dependencies_dev:
-  barryvdh/laravel-debugbar: ^4.0
+  fruitcake/laravel-debugbar: ^4.0
   laravel-lang/lang: ^15.19
-  pestphp/pest: '*'
