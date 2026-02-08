@@ -15,6 +15,7 @@ return [
 
     'name' => env('APP_NAME', 'Statamic'),
     'image_cdn' => env('IMAGE_CDN'),
+    'video_cdn' => env('VIDEO_CDN'),
 
     /*
     |--------------------------------------------------------------------------
