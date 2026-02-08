@@ -46,4 +46,4 @@ dependencies:
 dependencies_dev:
   barryvdh/laravel-debugbar: ^4.0
   laravel-lang/lang: ^15.19
-  pestphp/pest: ^4.1
+  pestphp/pest: '*'
