@@ -99,11 +99,11 @@ return [
             'endpoint' => env('CLOUD_ENDPOINT'),
             'use_path_style_endpoint' => env('CLOUD_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
-            'root' => env('CLOUD_ROOT'),
+            'root' => env('CLOUD_ROOT') . '/assets',
             'visibility' => 'public',
         ],
 
-        'assets' => [
+        'attachments' => [
             'driver' => 's3',
             'key' => env('CLOUD_ACCESS_KEY_ID'),
             'secret' => env('CLOUD_SECRET_ACCESS_KEY'),
@@ -113,7 +113,7 @@ return [
             'endpoint' => env('CLOUD_ENDPOINT'),
             'use_path_style_endpoint' => env('CLOUD_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
-            'root' => env('CLOUD_ROOT') . '/assets',
+            'root' => env('CLOUD_ROOT') . '/attachments',
             'visibility' => 'public',
         ],
 
