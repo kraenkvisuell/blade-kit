@@ -23,7 +23,7 @@ return [
     ],
 
     'collections' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Collections\CollectionModel::class,
         'update_entry_order_queue' => 'default',
         'update_entry_order_connection' => 'sync',
@@ -58,7 +58,7 @@ return [
     ],
 
     'global_sets' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Globals\GlobalSetModel::class,
     ],
 
@@ -68,7 +68,7 @@ return [
     ],
 
     'navigations' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Structures\NavModel::class,
     ],
 
@@ -84,7 +84,7 @@ return [
     ],
 
     'taxonomies' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Taxonomies\TaxonomyModel::class,
     ],
 
@@ -99,7 +99,7 @@ return [
     ],
 
     'sites' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Sites\SiteModel::class,
     ],
 ];
